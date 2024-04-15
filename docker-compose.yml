@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  web:
+    image: my-fastapi-app
+    command: ["python", "main.py"]
+    ports:
+      - "8000:8000"
+    environment:
+      MODULE_NAME: main
+      VARIABLE_NAME: app
+      PORT: 8000
