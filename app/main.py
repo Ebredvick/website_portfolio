@@ -49,7 +49,7 @@ def read_root():
 
 @app.get("/home", response_class=HTMLResponse)
 def read_home(request: Request):
-    return templates.TemplateResponse("index.html", 
+    return templates.TemplateResponse("home.html", 
                                       {"request": request, 
                                        "title": "My Portfolio", 
                                        "github_url": "https://github.com/Ebredvick", 

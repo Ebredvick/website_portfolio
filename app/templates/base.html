@@ -22,24 +22,10 @@
         </div>
     </header>
 
-    <section id="skills">
-        <div class="container">
-            <a href="{{github_url}}" target="_blank" rel="noopener"><i class="fab fa-github fa-2xl"></i></a>
-            <a href="{{linkedin_url}}" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-2xl"></i></a>
-            <h1>Skills</h1>
-            <div class="skills-area">
-                {% for category, skills in skills_dict.items() %}
-                    <div class="skill-category">
-                        <h2>{{ category }}</h2>
-                        {% for skill in skills %}
-                            <p>{{ skill.name }}</p>
-                            <a href="{{ skill.credential_link }}">See Credential</a>
-                        {% endfor %}
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
 
     <!-- Add additional sections here -->
 
