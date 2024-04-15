@@ -70,61 +70,33 @@ async def get_github_repos(user: str):
     return response.json()
 
 @app.get("/about", response_class=HTMLResponse)
-async def read_about():
-    return """
-    <html>
-        <head>
-            <title>About Me</title>
-        </head>
-        <body>
-            <h2>About Me</h2>
-            <p>This is the about page. Here is some information about me.</p>
-            <!-- Add more about content here -->
-        </body>
-    </html>
-    """
+async def read_about(request: Request):
+    return templates.TemplateResponse("about.html", 
+                                      { "request": request,
+                                        "title": "My Portfolio", 
+                                       "github_url": "https://github.com/Ebredvick", 
+                                       "linkedin_url": "https://www.linkedin.com/in/ethan-bredvick-967b52123"}) 
 
 @app.get("/portfolio", response_class=HTMLResponse)
-async def read_portfolio():
-    return """
-    <html>
-        <head>
-            <title>My Portfolio</title>
-        </head>
-        <body>
-            <h2>My Portfolio</h2>
-            <p>Here is some of my work.</p>
-            <!-- Add more portfolio content here -->
-        </body>
-    </html>
-    """
+async def read_portfolio(request: Request):
+    return templates.TemplateResponse("portfolio.html", 
+                                      { "request": request,
+                                        "title": "My Portfolio", 
+                                       "github_url": "https://github.com/Ebredvick", 
+                                       "linkedin_url": "https://www.linkedin.com/in/ethan-bredvick-967b52123"}) 
 
 @app.get("/contacts", response_class=HTMLResponse)
-async def read_contacts():
-    return """
-    <html>
-        <head>
-            <title>Contact Me</title>
-        </head>
-        <body>
-            <h2>Contact Me</h2>
-            <p>You can reach me via email at: example@example.com</p>
-            <!-- Add more contact content here -->
-        </body>
-    </html>
-    """
+async def read_contacts(request: Request):
+    return templates.TemplateResponse("contacts.html", 
+                                      { "request": request,
+                                        "title": "My Portfolio", 
+                                       "github_url": "https://github.com/Ebredvick", 
+                                       "linkedin_url": "https://www.linkedin.com/in/ethan-bredvick-967b52123"}) 
 
 @app.get("/blog", response_class=HTMLResponse)
-async def read_blog():
-    return """
-    <html>
-        <head>
-            <title>My Blog</title>
-        </head>
-        <body>
-            <h2>My Blog</h2>
-            <p>Welcome to my blog. Here are some of my thoughts.</p>
-            <!-- Add more blog content here -->
-        </body>
-    </html>
-    """
+async def read_blog(request: Request):
+    return templates.TemplateResponse("blog.html", 
+                                      { "request": request,
+                                        "title": "My Portfolio", 
+                                       "github_url": "https://github.com/Ebredvick", 
+                                       "linkedin_url": "https://www.linkedin.com/in/ethan-bredvick-967b52123"}) 
