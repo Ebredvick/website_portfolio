@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{{url_for('static', path='css/style.css')}}">
+</head>
+<body>
+    <header>
+        <h1>{{name}}</h1>
+    </header>
+
+    <main>
+        <section id="intro">
+            <p>Welcome to my portfolio. My name is {{name}} and I am a Python developer.</p>
+            <p>You can learn more about me and my work through the following links:</p>
+
+            <a href="{{github_url}}" target="_blank" rel="noopener">GitHub</a>
+            <a href="{{linkedin_url}}" target="_blank" rel="noopener">LinkedIn</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© {{current_year}} {{name}}</p>
+    </footer>
+</body>
+</html>
