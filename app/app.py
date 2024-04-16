@@ -13,6 +13,27 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates/")
 
+frontend_skills = {
+    "Flask": "Experienced",
+    "Data Visualization (Matplotlib, Plotly, Bokeh, Seaborn)": "Experienced",
+    "Power BI": "Experienced"
+}
+
+backend_skills = {
+    "Python Development": "Experienced",
+    "RESTful APIs": "Experienced",
+    "CI/CD Pipelines (Azure Pipelines, GitLab, GitHub, Azure DevOps)": "Experienced",
+    "Version Control Tools (Git)": "Experienced",
+    "ETL Tools (Pandas)": "Experienced",
+    "Model Training (SKLearn, Numpy, Scipy)": "Experienced",
+    "SQL": "Experienced",
+    "Machine Learning": "Experienced",
+    "Agile Framework (Scrum)": "Experienced",
+    "Data Engineering": "Intermediate",
+    "Software Development": "Experienced",
+    "Chemical Engineering": "Experienced"
+}
+
 def get_api_key():
     with open('./secrets/api_key.txt') as f:
         api_key = f.read()
@@ -33,5 +54,11 @@ async def get_github_repos(user: str):
 
 @app.get("/", response_class=HTMLResponse)
 def read_root(request: Request):
-    return templates.TemplateResponse("home.html", 
-                                      {"request": request}) 
+    return templates.TemplateResponse("index.html", 
+                                      {"request": request,
+                                       "name": "Ethan Bredvick",
+                                       "role": "Software Engineer",
+                                       "years_exp": "3+ years",
+                                       "education": "B.Sc. Eng. (Chemical)",
+                                       "backend_skills": backend_skills,
+                                       "frontend_skills": frontend_skills}) 
